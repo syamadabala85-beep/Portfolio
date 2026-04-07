@@ -1,45 +1,172 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>My Portfolio</title>
-    <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Syam Portfolio</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    line-height: 1.6;
+}
+
+/* Navbar */
+nav {
+    background: #333;
+    color: white;
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+}
+
+nav a {
+    color: white;
+    margin: 0 10px;
+    text-decoration: none;
+}
+
+/* Header */
+header {
+    background: linear-gradient(to right, #4facfe, #00f2fe);
+    color: white;
+    text-align: center;
+    padding: 60px 20px;
+}
+
+/* Sections */
+section {
+    padding: 40px;
+    text-align: center;
+}
+
+h2 {
+    margin-bottom: 15px;
+}
+
+/* Skills */
+ul {
+    list-style: none;
+}
+
+li {
+    background: #eee;
+    margin: 5px;
+    padding: 10px;
+    display: inline-block;
+}
+
+/* Projects */
+.projects p {
+    background: #f4f4f4;
+    padding: 10px;
+    margin: 10px;
+}
+
+/* Contact */
+input, textarea {
+    width: 80%;
+    padding: 10px;
+    margin: 10px;
+}
+
+button {
+    padding: 10px 20px;
+    background: #333;
+    color: white;
+    border: none;
+}
+
+/* Footer */
+footer {
+    background: #333;
+    color: white;
+    text-align: center;
+    padding: 15px;
+}
+</style>
+
 </head>
+
 <body>
 
+<!-- Navbar -->
+<nav>
+    <h3>Syam</h3>
+    <div>
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+    </div>
+</nav>
+
+<!-- Header -->
 <header>
-    <h1>Syam Adabala</h1>
-    <p>Web Developer | Student</p>
+    <h1>Adabala Syam Satya Sasidhar</h1>
+    <p>Web Developer | BCA Student</p>
 </header>
 
+<!-- About -->
 <section id="about">
     <h2>About Me</h2>
-    <p>I am a BCA student passionate about web development.</p>
+    <p>I am a passionate BCA student interested in web development and programming. I enjoy building websites and learning new technologies.</p>
 </section>
 
+<!-- Skills -->
 <section id="skills">
     <h2>Skills</h2>
     <ul>
         <li>HTML</li>
         <li>CSS</li>
         <li>JavaScript</li>
+        <li>C</li>
+        <li>Python</li>
     </ul>
 </section>
 
-<section id="projects">
+<!-- Projects -->
+<section id="projects" class="projects">
     <h2>Projects</h2>
-    <p>Portfolio Website, Landing Page, Form Validation</p>
+    <p>Portfolio Website</p>
+    <p>Responsive Landing Page</p>
+    <p>Form Validation Project</p>
 </section>
 
+<!-- Contact -->
 <section id="contact">
-    <h2>Contact</h2>
-    <form>
-        <input type="text" placeholder="Name"><br>
-        <input type="email" placeholder="Email"><br>
-        <textarea placeholder="Message"></textarea><br>
-        <button>Send</button>
+    <h2>Contact Me</h2>
+    <form onsubmit="return validateForm()">
+        <input type="text" id="name" placeholder="Your Name"><br>
+        <input type="email" id="email" placeholder="Your Email"><br>
+        <textarea id="message" placeholder="Your Message"></textarea><br>
+        <button type="submit">Send</button>
     </form>
 </section>
+
+<!-- Footer -->
+<footer>
+    <p>© 2026 Syam Portfolio</p>
+</footer>
+
+<script>
+function validateForm() {
+    let name = document.getElementById("name").value;
+    let email = document.getElementById("email").value;
+
+    if(name === "" || email === "") {
+        alert("Please fill all fields");
+        return false;
+    }
+    return true;
+}
+</script>
 
 </body>
 </html>
